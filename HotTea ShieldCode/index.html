@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HotTea ShieldCode</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .captcha-box {
+            padding: 20px;
+            background-color: #ffffff;
+            border: 1px solid #cccccc;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            width: 200px;
+            text-align: center;
+            position: relative;
+        }
+        .captcha-box:hover {
+            background-color: #d4d3d3;
+        }
+        .logo {
+            position: absolute;
+            top: 5px;
+            left: 5px;
+            width: 50px;
+            height: 50px;
+        }
+        .title {
+            margin-top: 10px;
+            font-size: 14px;
+        }
+
+        .titlee {
+            margin-top: 10px;
+            font-size: 8px;
+        }
+    </style>
+</head>
+<body>
+    <div class="captcha-box" id="openCodeButton">
+        <img class="logo" src="hottea.png" alt="HotTea Logo">
+        <div class="titlee">Secured By HotTea</div>
+        <div class="title">Click to Get Code</div>
+    </div>
+    <div id="codeInputContainer" style="display: none;">
+        <input type="text" id="codeInput" placeholder="Enter code here">
+        <button id="submitButton">Submit</button>
+    </div>
+    <script>
+    document.getElementById('openCodeButton').addEventListener('click', function() {
+    document.getElementById('codeInputContainer').style.display = 'block';
+    var codeWindow = window.open('code.html', '_blank');
+});
+
+window.addEventListener('message', function(event) {
+    if (event.data && event.data.tempCode) {
+        document.getElementById('codeInput').value = '';
+        document.getElementById('codeInput').placeholder = 'Enter code here';
+        var storedCode = event.data.tempCode;
+        document.getElementById('codeInput').setAttribute('data-tempcode', storedCode);
+    }
+});
+
+document.getElementById('submitButton').addEventListener('click', function() {
+    var enteredCode = document.getElementById('codeInput').value;
+    var storedCode = document.getElementById('codeInput').getAttribute('data-tempcode');
+    if (enteredCode === storedCode) {
+        alert('Code is correct!');
+        document.getElementById('codeInput').removeAttribute('data-tempcode');
+    } else {
+        alert('Code is incorrect!');
+    }
+});
+    </script>
+</body>
+</html>
