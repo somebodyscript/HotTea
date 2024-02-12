@@ -22,4 +22,4 @@ HotTea Anti-Raid is a lightweight and customizable anti-raid system designed to 
 2. Customize the system by adjusting the styles and integrating your logo.
 3. Set up the repository link in the code to direct users to your HotTea repository.
 
-Feel free to explore the [source code](link_to_your_repository) to understand the inner workings of HotTea Anti-Raid. We welcome contributions and feedback to make it even more robust and effective.
+Feel free to explore the [source code](https://github.com/somebodyscript/HotTea/tree/main/HotTea%20Anti-Raid) to understand the inner workings of HotTea Anti-Raid. We welcome contributions and feedback to make it even more robust and effective.
