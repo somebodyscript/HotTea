@@ -122,7 +122,7 @@ function checkUserOnVisit() {
     logo.style.height = "auto";
 
     logo.onclick = function() {
-        window.location.href = "https://your-repository-link";
+        window.location.href = "https://github.com/somebodyscript/HotTea";
     };
     var securedByHotTea = document.createElement("div");
     securedByHotTea.innerHTML = "Secured by HotTea";
@@ -243,9 +243,9 @@ function showWarningMessage(message) {
     warningMessage.className = "warning-message fadeIn";
     warningMessage.innerHTML = "<h2>Anti-raid system</h2><p>" + message + "</p>";
     var logo = document.createElement("img");
-    logo.src = "./logo.png"; // Replace "path/to/your/logo.png" with the actual path to your logo image
+    logo.src = "./logo.png";
     logo.onclick = function() {
-        window.location.href = "https://your-repository-link"; // Replace "https://your-repository-link" with the link to your repository
+        window.location.href = "https://github.com/somebodyscript/HotTea";
     };
     warningMessage.appendChild(logo);
     document.body.innerHTML = "";
@@ -257,9 +257,9 @@ function showDangerMessage(message) {
     dangerMessage.className = "danger-message fadeIn";
     dangerMessage.innerHTML = "<h2>Anti-raid system</h2><p>" + message + "</p>";
     var logo = document.createElement("img");
-    logo.src = "./logo.png"; // Replace "path/to/your/logo.png" with the actual path to your logo image
+    logo.src = "./logo.png";
     logo.onclick = function() {
-        window.location.href = "https://your-repository-link"; // Replace "https://your-repository-link" with the link to your repository
+        window.location.href = "https://github.com/somebodyscript/HotTea";
     };
     dangerMessage.appendChild(logo);
     document.body.innerHTML = "";
